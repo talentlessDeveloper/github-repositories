@@ -2,7 +2,11 @@ import React from "react";
 
 const HeaderMenuBtn = ({ openMenu, handleMenu }) => {
   return (
-    <button className='z-10 block md:hidden space-y-1' onClick={handleMenu}>
+    <button
+      className='z-10 block md:hidden space-y-1'
+      aria-label='nav mobile menu'
+      onClick={handleMenu}
+    >
       <span
         className={`bg-zinc-700 dark:bg-neutral-50 w-4 h-0.5 block transition-opacity duration-500 ${
           openMenu ? "opacity-0" : "opacity-1"
