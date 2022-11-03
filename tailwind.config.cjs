@@ -28,7 +28,7 @@ module.exports = {
           500: "rgb(9, 105, 218)",
         },
         repoColor: "rgb(87, 96, 106)",
-        gitGreen: "rgb(45, 164, 78)",
+        gitGreen: "#237B3C",
       },
       fontFamily: {
         josefin: ["Josefin Sans", "sans-serif"],

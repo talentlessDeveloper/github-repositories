@@ -36,7 +36,7 @@ const RepoMain = () => {
           })}
         </ul>
         <div
-          className={`flex justify-between items-center py-8 border-t border-grey-100  dark:border-neutral-400 ${
+          className={`flex flex-col items-start gap-y-3  md:flex-row justify-between md:items-center py-8 border-t border-grey-100  dark:border-neutral-400 ${
             value ? "hidden" : ""
           }`}
         >

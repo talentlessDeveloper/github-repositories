@@ -42,8 +42,8 @@ function App() {
                 <Route index element={<Repos />} />
                 <Route path=':name' element={<Repo />} />
               </Route>
-              <Route path='*' element={<ErrorPage />} />
             </Route>
+            <Route path='*' element={<ErrorPage />} />
           </Routes>
         </div>
       </Suspense>

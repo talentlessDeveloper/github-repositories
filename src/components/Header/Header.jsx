@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Link, Outlet } from "react-router-dom";
 
 import { BsMoon, BsSunFill } from "react-icons/bs";
 
@@ -29,12 +29,13 @@ const Header = ({ theme, setTheme }) => {
       >
         <nav className='p-4 md:px-8 flex justify-between items-center '>
           <p className='z-10'>
-            <Link
+            <NavLink
               to='/'
               className='text-2xl md:text-4xl font-josefin dark:text-neutral-50'
+              end
             >
               tD
-            </Link>
+            </NavLink>
           </p>
 
           <HeaderLinks />
