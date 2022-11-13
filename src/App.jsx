@@ -43,6 +43,7 @@ function App() {
                 <Route path=':name' element={<Repo />} />
               </Route>
             </Route>
+            <Route path='/errorpage' element={<ErrorPage />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </div>
