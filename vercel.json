@@ -1,7 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/" },
-    { "source": "/(.*)", "destination": "/errorpage" },
-    { "source": "/errorboundary", "destination": "/errorboundary" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
