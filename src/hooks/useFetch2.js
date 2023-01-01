@@ -14,5 +14,7 @@ const fetchData = async (url) => {
 // };
 
 export const useFetchedUrl = (url, urlType) => {
-  return useQuery(urlType, async () => await fetchData(url));
+  return useQuery(urlType, async () => await fetchData(url), {
+    useErrorBoundary: (error) => error.response?.status >= 500,
+  });
 };
