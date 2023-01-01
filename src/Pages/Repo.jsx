@@ -8,12 +8,14 @@ import useFetch from "../hooks/useFetch";
 import Loader from "../utility/Loader";
 import RepoIcon from "../utility/RepoIcon";
 import octocat from "../assets/Octocat-removebg-preview.png";
+import { useFetchedUrl } from "../hooks/useFetch2";
 
 const Repo = () => {
   const params = useParams();
+
   const URL = `https://api.github.com/repos/talentlessDeveloper/${params.name}`;
-  const { data, loading } = useFetch(URL);
-  if (loading) return <Loader />;
+  const { data, isLoading } = useFetchedUrl(URL, "repoData");
+  if (isLoading) return <Loader />;
 
   const {
     full_name,
