@@ -2,36 +2,40 @@ import { CiMail } from "react-icons/ci";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-import profile from "../../assets/img-repo-2.webp";
+// import profile from "../../assets/img-repo-2.webp";
+// import useFetch from "../../hooks/useFetch";
+// import Loader from "../../utility/Loader";
 
-const RepoHeader = () => {
+const RepoHeader = ({ data }) => {
   return (
     <>
       {" "}
       <div className='aside md:h-screen '>
         <div className='flex gap-x-4 items-center  md:flex-col md:items-start'>
           <motion.img
-            src={profile}
+            src={data.avatar_url}
             alt='talentless Developer profile'
             className='w-16 aspect-square object-cover rounded-full md:w-64'
             layoutId='entranceImg'
           />
           <div>
             <h1 className='flex flex-col py-4'>
-              <span className='text-[1.5rem] font-semibold'>Ope Kareem</span>
-              <span>talentlessDeveloper</span>
+              <span className='text-[1.5rem] font-semibold'>{data.name}</span>
+              <span>{data.login}</span>
             </h1>
           </div>
         </div>
         <div className='space-y-3 mt-8'>
-          <h2 className='text-xl'>Student at AltSchool Africa</h2>
+          <h2 className='text-xl'>{data.bio}</h2>
           <div className='flex gap-x-4 items-center'>
             <CiMail className='mt-[0.4rem]' />
             <a href='mailto:kareemope52@gmail.com'>kareemope52@gmail</a>
           </div>
           <div className='flex gap-x-4 items-center'>
             <AiOutlineUsergroupAdd className='mt-[0.4rem]' />
-            <p>8 followers. 8 following</p>
+            <p>
+              {data.followers} followers. {data.following} following
+            </p>
           </div>
         </div>
         <div className='mt-10 pt-4 border-t border-neutral-100 dark:border-neutral-400'>

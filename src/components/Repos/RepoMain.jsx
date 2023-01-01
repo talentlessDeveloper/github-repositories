@@ -1,23 +1,16 @@
 import { useState } from "react";
 
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import useFetch from "../../hooks/useFetch";
-import Loader from "../../utility/Loader";
 
 import RepoCard from "./RepoCard";
 import RepoForm from "./RepoForm";
 
-const RepoMain = () => {
+const RepoMain = ({ data }) => {
   const [page, setPage] = useState(1);
   const [value, setValue] = useState("");
 
   const reposPerPage = 8;
-  const { data, loading } = useFetch(
-    "https://api.github.com/users/talentlessDeveloper/repos"
-  );
   let repos = data;
-
-  if (loading) return <Loader />;
 
   const start = (page - 1) * reposPerPage;
   const end = page * reposPerPage;
