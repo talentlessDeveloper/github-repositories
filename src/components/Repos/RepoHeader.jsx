@@ -2,16 +2,11 @@ import { CiMail } from "react-icons/ci";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-import profile from "../../assets/img-repo-2.webp";
-import useFetch from "../../hooks/useFetch";
-import Loader from "../../utility/Loader";
+// import profile from "../../assets/img-repo-2.webp";
+// import useFetch from "../../hooks/useFetch";
+// import Loader from "../../utility/Loader";
 
-const RepoHeader = () => {
-  const { loading, data } = useFetch(
-    "https://api.github.com/users/talentlessDeveloper"
-  );
-  if (loading) return <Loader />;
-  console.log(data);
+const RepoHeader = ({ data }) => {
   return (
     <>
       {" "}
